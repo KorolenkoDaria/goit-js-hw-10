@@ -33,7 +33,7 @@ body{
 .temperament{
     font-size: 18px;
 }
-.ss-main {
+div.ss-main {
     margin:30px 0 0 20px;
     width: 15%;
     border: 1px solid #D5339F;
@@ -43,19 +43,19 @@ body{
     background-color: #172442;
     padding: 8px;
 }
-.ss-main .ss-arrow path{
+div.ss-main .ss-arrow path{
     stroke: #D5339F;
 }
-.ss-content{
+div.ss-content{
     font-size: 18px;
 }
-.ss-content .ss-search input {
+div.ss-content .ss-search input {
     border: 1px solid #172442;
 }
-.ss-content .ss-search input:focus {
+div.ss-content .ss-search input:focus {
     box-shadow: 0 0 5px #172442b8;
 }
-.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+div.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
     background-color: #172442;
 }
 
