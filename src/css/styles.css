@@ -4,7 +4,7 @@ body{
 }
 .cat-info{
     display: flex;
-    gap: 30px;
+    gap: 3px;
     max-width: 1200px;
     margin: -39px auto;
 }
@@ -15,17 +15,18 @@ body{
     background-repeat: no-repeat;
     background-color: #ffffff26;
     background-position: center center;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
 }
 .wrap-description{
     /* border: 1px solid #D5339F; */
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    padding: 30px;
     color: #ffffff;
     background-color: #ffffff26;
 }
 .title{
     font-size: 32px;
+    color:#D5339F;
 }
 .description{
     font-size: 18px;
@@ -35,7 +36,7 @@ body{
 }
 div.ss-main {
     margin:30px 0 0 20px;
-    width: 15%;
+    width: 300px;
     border: 1px solid #D5339F;
     font-size: 18px;
     font-weight: 700;
