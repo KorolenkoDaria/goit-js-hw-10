@@ -15,27 +15,29 @@ refs.select.addEventListener('change', onChange);
 
 switchLoader('none');
 
-fetchBreeds()
-    .then(data => { 
-        renderList(data);
-        new SlimSelect({
-            select: refs.select,
-            settings: {
-                placeholderText: 'Enter the cat breed',
-            },
-        });    
-    })
-    .catch(onError);
-    
+function fetchData() {
+    switchLoader('block');
 
-function renderList(data) {
-    return data.map(({id, name}) => {
-        const option = document.createElement('option');
-        option.value = id;
-        option.textContent = name;
-       refs.select.appendChild(option); 
-   });   
+    fetchBreeds()
+        .then(data => {       
+            refs.select.innerHTML = renderOptions(data);           
+            new SlimSelect({
+                select: refs.select,
+            });    
+        })
+        .catch(onError)
+        .finally(() => switchLoader('none'));
 }
+
+fetchData();
+
+function renderOptions(data) {
+    const result = data.map(
+        ({ id, name }) => `<option value="${id}">${name}</option>`
+    );
+    return result
+}
+
 
 function onChange(evt) {
     switchLoader('block');
@@ -46,7 +48,8 @@ function onChange(evt) {
             refs.catDescription.style.display = 'flex';
             renderCard(data);
         })
-        .catch(onError)   
+        .catch(onError) 
+        .finally(() => switchLoader('none'));
     };
 
 function renderCard(breed) {
